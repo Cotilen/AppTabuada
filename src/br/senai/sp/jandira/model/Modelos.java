@@ -5,27 +5,39 @@ public class Modelos {
 	public int multiplicando;
 	public int minMultiplicador;
 	public int maxMultiplicador;
-	public String[] tabuada;
+	public String[] resultados;
 
 	public void getTabuada() {
 
-		int contador1 = minMultiplicador;
-		int contador2 = 0;
-		tabuada = new String[maxMultiplicador - minMultiplicador + 1];
-		while (contador1 <= maxMultiplicador) {
+		int tamanhoResultado = maxMultiplicador - minMultiplicador + 1;
+		resultados = new String[tamanhoResultado];
 
-			tabuada[contador2] = multiplicando + " X " + contador1 + " = " + multiplicando * contador1;
-			contador1++;
-			contador2++;
+		int soma = 0;
+		int somaMin = minMultiplicador;
+
+		while (somaMin < maxMultiplicador) {
+
+			resultados[soma] = multiplicando + " X " + somaMin + " = " + multiplicando * somaMin;
+			soma++;
+			somaMin++;
 
 		}
+
 	}
-	
+
 	public void getResultado() {
-		
-		
-		
-		
+
+		int soma = 0;
+		int somaMin = minMultiplicador;
+
+		while (somaMin <= maxMultiplicador) {
+
+			System.out.println(resultados[soma]);
+			soma++;
+			somaMin++;
+
+		}
+
 	}
 
 }
