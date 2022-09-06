@@ -3,6 +3,8 @@ package br.senai.sp.jandira.gui;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import br.senai.sp.jandira.model.*;
 import br.senai.sp.jandira.*;
@@ -12,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class FrameTabuada {
@@ -93,13 +96,25 @@ public class FrameTabuada {
 		labelResultado.setText("Resultado");
 		labelResultado.setBounds(20, 240, 160, 30);
 		
-		DefaultListModel<Modelos> listModel = new DefaultListModel();
-		listModel.addElement(null);
+		JList<String> listResultados = new JList<String>();
 		
-		JList lista = new JList;
-		lista.setModel(listModel);
-		lista.setSelectionModel(null);
-		lista.setBounds(20, 290, 400, 100);
+		JScrollPane scroll = new JScrollPane(listResultados);
+		scroll.setBounds(20, 280, 300, 200);
+		
+		buttonCalcular.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Modelos tabuada = new Modelos();
+				tabuada.minMultiplicador = Integer.parseInt(textMinMultiplicador.getText());
+				tabuada.maxMultiplicador = Integer.parseInt(textMaxMultiplicador.getText());
+				tabuada.multiplicando = Integer.parseInt(textMultiplicando.getText());
+
+				String[]
+			}
+		});
 
 //		 Adicionar componentes ao painel(Container)
 
@@ -114,7 +129,7 @@ public class FrameTabuada {
 		tela.add(buttonCalcular);
 		tela.add(buttonLimpar);
 		tela.add(labelResultado);
-		tela.add(lista);
+		tela.add(scroll);
 		tela.setVisible(true);
 	}
 
