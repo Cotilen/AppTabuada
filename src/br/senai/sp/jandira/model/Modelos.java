@@ -7,7 +7,7 @@ public class Modelos {
 	public int maxMultiplicador;
 	public String[] resultados;
 
-	public void getTabuada() {
+	public String[] getTabuada() {
 
 		int tamanhoResultado = maxMultiplicador - minMultiplicador + 1;
 		resultados = new String[tamanhoResultado];
@@ -22,6 +22,7 @@ public class Modelos {
 			somaMin++;
 
 		}
+		return resultados;
 
 	}
 
